@@ -1,0 +1,3 @@
+#!/bin/sh
+url=$1
+curl $url 2>/dev/null | grep -Eo "https://www.youtube.com/feeds/videos.xml\?channel_id=.{24}" | tail -n1 | tee /dev/tty | xclip
